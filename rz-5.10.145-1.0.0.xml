@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <default revision="scarthgap" sync-j="4"/>
+
+  <remote name="yp" fetch="https://git.yoctoproject.org"/>
+  <remote name="oe" fetch="https://github.com/openembedded"/>
+  <remote name="rz" fetch="https://github.com/renesas-rz"/>
+  <remote name="mq" fetch="https://github.com/mayqueen-lab"/>
+
+
+  <project name="poky" remote="yp" path="sources/poky" revision="dce4163d42f7036ea216b52b9135968d51bec4c1" upstream="scarthgap">
+    <linkfile dest="scripts" src="scripts"/>
+    <linkfile dest="bitbake" src="bitbake"/>
+    <linkfile dest="meta-poky" src="meta-poky"/>
+    <linkfile dest=".templateconf" src=".templateconf"/>
+    <linkfile dest="oe-init-build-env" src="oe-init-build-env"/>
+  </project>
+
+  <project name="meta-openembedded" remote="oe" path="sources/meta-openembedded" revision="2e3126c9c16bb3df0560f6b3896d01539a3bfad7" upstream="scarthgap" />
+  <project name="meta-arm" remote="yp" path="sources/meta-arm" revision="950a4afce46a359def2958bd9ae33fc08ff9bb0d" upstream="scarthgap" />
+  <project name="rz-community-bsp" remote="rz" path="sources/meta-rz-community" revision="yocto-5.0.1" />
+
+  <project name="meta-kakip-rz-bsp" path="sources/meta-kakip-rz-bsp" remote="mq" revision="kakip-scarthgap_5.10.145-next">
+    <linkfile src="conf/kakip-conf/kakip-rz-setup-release.sh" dest="kakip-rz-setup-release.sh"/>
+  </project>
+</manifest>
